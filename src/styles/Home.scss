@@ -1,0 +1,19 @@
+.content{
+    height:auto;
+    width: 100%;
+
+    @media screen and (max-width: 1450px){
+        height: auto;
+    }
+
+    @media screen and (max-width: 1220px){
+        height: auto;
+    }
+
+    @media screen and (max-width: 750px){
+        height: auto;
+    }
+    @media screen and (max-width: 450px){
+        height: auto;
+    }
+}

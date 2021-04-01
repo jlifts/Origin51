@@ -1,0 +1,81 @@
+span{
+    color:#ebebeb !important;
+    font-size: 1.5em;
+}
+.addL{
+    .an{
+        margin-left: 8.2em !important;
+
+        @media screen and (max-width: 1220px){
+ 
+            margin-left: 2rem !important;
+            display: block;
+        }
+
+        @media screen and (max-width: 450px){
+ 
+            margin-left: 2rem !important;
+            display: block;
+        }
+    }
+
+    @media screen and (max-width: 1220px){
+
+        margin-left: 0 !important;
+        display: block;
+    }
+
+    @media screen and (max-width: 450px){
+
+        margin-left: 0 !important;
+        display: block;
+    }
+}
+
+.__debug-3{
+    background: green !important;
+    display: inline !important;
+    margin-left: 6em;
+    margin-bottom: 7rem;
+    border: 2px solid green !important;
+    
+    &:hover{
+        background: black !important;
+        border: 2px solid #ebebeb !important;
+    }
+}
+.quantity-containerL{
+    display: inline-block;
+    margin-left: 12rem;
+    margin-right: auto;
+
+    .quantity{
+        margin: 0 1rem;
+        outline: none;
+        color: #ebebeb;
+        background: none;
+        border: none;
+        font-size: 2rem;
+    
+        cursor: pointer;
+    }
+
+    @media screen and (max-width: 1220px){
+        margin-left: 8rem !important;
+        margin-right: 4rem !important;
+    }
+
+    @media screen and (max-width: 450px){
+        margin-left: 4rem !important;
+    }
+}
+.au{
+    @media screen and (max-width: 450px){
+        padding-left: 0 !important;
+    }
+}
+.ao{
+    @media screen and (max-width: 450px){
+        margin-right: 0 !important;
+    }
+}

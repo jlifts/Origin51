@@ -1,0 +1,86 @@
+.container{
+    margin: 0rem 9rem 8rem;
+    display:grid;
+    grid-template-areas: 'col1 col1 col1 col2 col2 col2'
+                         'col1 col1 col1 col3 col3 col3' ;
+    grid-gap: 1rem;
+    padding-top: 6em;
+
+    @media screen and (max-width: 1220px){
+        width: auto;
+        margin: 4rem 2rem;
+        display: block;
+    }
+
+    @media screen and (max-width: 850px){
+        width: auto;
+        margin: 3rem;
+        display: block;
+    }
+
+    @media screen and (max-width: 450px){
+        width: auto;
+        margin: auto;
+        display: block;
+    }
+}
+.photo{
+    width: 28rem;
+    height: 28rem;
+    grid-area: col1;
+    margin-right: 7rem;
+    margin-top: 2rem;
+
+    @media screen and (max-width: 1220px){
+        width: auto;
+        margin: 3rem auto;
+        display: block;
+    }
+
+    @media screen and (max-width: 850px){
+        width: auto;
+        margin: 3rem auto;
+        display: block;
+    }
+
+    @media screen and (max-width: 450px){
+        width: auto;
+        margin: 3rem auto;
+        display: block;
+    }
+}
+.title{
+    color: #ebebeb;
+    grid-area: col2;
+    cursor: default;
+
+    @media screen and (max-width: 1220px){
+        width: auto;
+        margin: 2rem 0;
+        font-size: 28px;
+    }
+
+    @media screen and (max-width: 850px){
+        width: auto;
+        margin: 2rem 0;
+        font-size: 28px;
+    }
+
+    @media screen and (max-width: 450px){
+        width: auto;
+        margin: 2rem;
+        font-size: 28px;
+    }
+}
+.body{
+    color: #ebebeb;
+    line-height: 1.75rem;
+    letter-spacing: 1px;
+    grid-area: col3;
+
+    @media screen and (max-width: 450px){
+        width: auto;
+        margin: 2rem;
+        font-size: 16px;
+    }
+}

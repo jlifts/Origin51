@@ -1,0 +1,15 @@
+{
+  "short_name": "Origin 51",
+  "name": "This is where you can get out-of-this-world smokable hemp!",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
