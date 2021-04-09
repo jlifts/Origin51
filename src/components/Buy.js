@@ -2,23 +2,22 @@ import React, { useContext, useEffect } from 'react'
 import '../styles/Buy.scss'
 import { ShopContext } from '../context/shopProvider'
 import { Row, Button, Col} from 'atomize'
-import { useParams } from 'react-router-dom'
+
 // import Variant from '../components/VariantSelector'
 
 //Smokable Id = 6551422795985
 //Vape Id = 6551423058129
 const Buy = () => {
 
-    let { id } = useParams()
 
     const { fetchProductWithId, addItemToCheckout, product, products, increment, decrement} = useContext(ShopContext)
 
     useEffect(() => {
-        fetchProductWithId(id)
+        fetchProductWithId()
         return () => {
 
         };
-    }, [ fetchProductWithId, id ])
+    }, [ fetchProductWithId,])
 
 
 if(!product) return <div>Loading</div>

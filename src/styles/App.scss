@@ -5,15 +5,36 @@
   text-decoration: none;
   font-family: serif, sans-serif;
 
-  #scrollPath{
+  #scrollPath {
     position: fixed;
     top: 0;
     right: 0;
     width: 10px;
     height: 100%;
     background: rgba(225, 225, 225, 0.05);
-    }
+  }
 }
-html{
+html {
   background: black;
+}
+.PageNotFound {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+
+  h1 {
+    color: #ebebeb;
+    font-size: 3em;
+    margin-bottom: 1em;
+  }
+  h2 {
+    color: #ebebeb;
+    margin-top: 1em;
+    margin-bottom: 2em;
+  }
+  .li {
+    color: greenyellow;
+    border-bottom: solid 2px greenyellow;
+  }
 }

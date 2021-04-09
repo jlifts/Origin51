@@ -20,7 +20,7 @@ const Cart = () => {
                             <>
                             {checkout.lineItems && checkout.lineItems.map(item => ( 
                             (<div key={item.id}>
-                                <div onClick={() => removelineItem(product.variants, -10)} className='remove'>x</div>
+                                <div onClick={() => removelineItem(product.quantity)} className='remove'>Remove</div>
                                 <div className='item-img'>
                                     <Div bgImg={item.variant.image.src} bgSize='cover' bgPos='center center' h='5rem' w='4rem'/>
                                 </div>

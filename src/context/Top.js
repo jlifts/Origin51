@@ -1,16 +1,18 @@
-import { useEffect } from 'react';
-import { withRouter } from 'react-router-dom';
+import { useEffect } from "react";
+import { withRouter } from "react-router-dom";
 
 function Rescroll({ history }) {
-    useEffect (() => {
-        const unlisten = history.listen(() => {
-            window.scrollTo(0,0);
-        });
-        return () => {
-            unlisten();
-        }
-    }, [history]);
-    return (null);
+  useEffect(() => {
+    const unlisten = history.listen(() => {
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+      }, 300);
+    });
+    return () => {
+      unlisten();
+    };
+  }, [history]);
+  return null;
 }
 
 export default withRouter(Rescroll);

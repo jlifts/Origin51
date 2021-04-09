@@ -18,7 +18,8 @@
 .env.test.local
 .env.production.local
 .shopProvider.js
-READMEI.md
+#shopProvider.js
+
 
 npm-debug.log*
 yarn-debug.log*
