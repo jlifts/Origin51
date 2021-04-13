@@ -1,13 +1,9 @@
-// import React, {useContext} from 'react';
-// import {ShopContext} from '../context/shopProvider';
+import React, { useContext } from "react";
+import { ShopContext } from "../context/shopProvider";
 
-// const VariantSelector = () => {
+const VariantSelector = () => {
+  const { changeVariant } = useContext(ShopContext);
 
-//     const { checkout } = useContext(ShopContext)
-
-//     return(
-
-//     )
-
-
-// export default VariantSelector;
+  return <div className="selector"></div>;
+};
+export default VariantSelector;

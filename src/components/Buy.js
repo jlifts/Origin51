@@ -1,44 +1,67 @@
-import React, { useContext, useEffect } from 'react'
-import '../styles/Buy.scss'
-import { ShopContext } from '../context/shopProvider'
-import { Row, Button, Col} from 'atomize'
+import React, { useContext, useEffect } from "react";
+import "../styles/Buy.scss";
+import { ShopContext } from "../context/shopProvider";
+import { Row, Button, Col } from "atomize";
 
 // import Variant from '../components/VariantSelector'
 
 //Smokable Id = 6551422795985
 //Vape Id = 6551423058129
 const Buy = () => {
+  const {
+    fetchProductWithId,
+    addItemToCheckout,
+    product,
+    products,
+    increment,
+    decrement,
+  } = useContext(ShopContext);
+  let id = 6551422795985;
 
+  useEffect(() => {
+    fetchProductWithId();
+    return () => {
+      console.log(id);
+    };
+  }, [fetchProductWithId, id]);
 
-    const { fetchProductWithId, addItemToCheckout, product, products, increment, decrement} = useContext(ShopContext)
+  if (!product) return <div>Loading</div>;
+  return (
+    <div className="add">
+      <Row>
+        {products.map((product) => (
+          <Col key={product.id}>
+            <span className="price">${product.variants[0].price}</span>
+            {/* <Variant /> */}
+            <div className="quantity-container">
+              <button
+                className="increase quantity"
+                onClick={() => increment(product.variants[0].id, 1)}
+              >
+                +
+              </button>
+              <span className="quantity number" min="1">
+                {product.quantity}
+              </span>
+              <button
+                className="decrease quantity"
+                onClick={() => decrement(product.variants[0].id, -1)}
+              >
+                -
+              </button>
+            </div>
+            <Button
+              className="add-btn"
+              onClick={() => addItemToCheckout(product.variants[0].id, 1)}
+            >
+              {" "}
+              Add To Cart
+            </Button>
+          </Col>
+        ))}
+      </Row>
+    </div>
+  );
+};
 
-    useEffect(() => {
-        fetchProductWithId()
-        return () => {
-
-        };
-    }, [ fetchProductWithId,])
-
-
-if(!product) return <div>Loading</div>
-    return (
-        <div className='add'>
-            <Row>
-                {products.map(product => (
-                <Col key={product.id}>
-                    <span className='price'>${product.variants[0].price}</span>
-                    {/* <Variant /> */}
-                    <div className='quantity-container'>
-                        <button className='increase quantity' onClick={() => increment(product.variants[0].id, 1)} >+</button>
-                        <span className='quantity number' min= '1'>{product.quantity}</span>
-                        <button className='decrease quantity' onClick={() => decrement(product.variants[0].id, -1)} >-</button>
-                    </div>
-                    <Button  className='add-btn' onClick={() => addItemToCheckout(product.variants[0].id, 1)}> Add To Cart</Button>
-                </Col>
-                ))}
-            </Row>
-        </div>
-    )
-}
-
-export default Buy
+export default Buy;
