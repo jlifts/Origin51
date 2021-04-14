@@ -9,6 +9,7 @@ class ShopProvider extends Component {
     product: {},
     checkout: {},
     isCartOpen: false,
+    quantity: 1,
   };
 
   componentDidMount() {
@@ -126,26 +127,6 @@ class ShopProvider extends Component {
   getSelectedVariant = async (product, options) =>
     await client.product.helpers.variantForOptions(product, options);
 
-  // working on
-  increment = async (id, quantity) => {
-    const updatedQuantity = [{ id, quantity }];
-    const checkout = await client.checkout.updateLineItems(
-      this.state.checkout.id,
-      updatedQuantity
-    );
-    this.setState({ checkout: checkout });
-  };
-
-  decrement = async (id, quantity) => {
-    const updatedQuantity = [{ id, quantity }];
-    const checkout = await client.checkout.updateLineItems(
-      this.state.checkout.id,
-      updatedQuantity
-    );
-    this.setState({ checkout: checkout });
-  };
-  //work end
-
   render() {
     return (
       <ShopContext.Provider
@@ -156,8 +137,6 @@ class ShopProvider extends Component {
           closeCart: this.closeCart,
           openCart: this.openCart,
           addItemToCheckout: this.addItemToCheckout,
-          increment: this.increment,
-          decrement: this.decrement,
           removeLineItems: this.removeLineItems,
           getVariants: this.getVariants,
           getSelectedVariant: this.getSelectedVariant,
