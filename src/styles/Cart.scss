@@ -1,27 +1,38 @@
 .side-container {
-  .ah {
-    color: #212121 !important;
-    text-align: center;
-    display: block;
-    letter-spacing: 4px;
-    position: absolute;
-    bottom: 0;
-    border: solid #ebebeb 2px;
-    background-color: #ebebeb;
-    margin-bottom: 1rem;
-    border-radius: 4px;
-    font-size: 1.5rem !important;
-    height: max-content;
+  .bottum {
+    bottom: 1em;
+    left: 2em;
+    margin-top: 3em;
 
-    &:hover {
-      background-color: #212121;
-      color: #ebebeb !important;
-      margin: 1rem 0rem;
+    .subtotal {
+      font-size: 1.2em;
+      position: relative;
+      margin-bottom: 0.5rem;
+
+      .cartLabel {
+        letter-spacing: 1px;
+        position: relative;
+      }
     }
-  }
-  .af {
-    padding: 0.5rem 1rem !important;
-    width: 80%;
+
+    .checkout-btn {
+      color: #212121 !important;
+      text-align: center;
+      display: block;
+      letter-spacing: 4px;
+      border: solid #ebebeb 2px;
+      background-color: #ebebeb;
+      margin-bottom: 1rem;
+      border-radius: 4px;
+      font-size: 1.5rem !important;
+      padding: 0.5em 3em;
+      right: 1em;
+
+      &:hover {
+        background-color: #212121;
+        color: #ebebeb !important;
+      }
+    }
   }
 
   &:hover {
@@ -31,28 +42,24 @@
   p {
     letter-spacing: 1px;
   }
+  .empty {
+    font-size: 1.5em;
+    display: flex;
+    left: 2em;
+    margin-top: 7em;
+  }
 }
 .cart_exit {
   outline: none;
   background-color: transparent;
+  display: flex;
   border: none;
   color: #ebebeb;
   cursor: pointer;
   font-size: 1.2rem;
-  margin-left: 16em;
+  margin-left: auto;
 }
-.subtotal {
-  font-size: 1.2em;
-  position: relative;
-  margin-bottom: 3em;
-  display: flex;
-  justify-content: flex-end;
-}
-.cartLabel {
-  letter-spacing: 1px;
-  position: relative;
-  margin-bottom: 0 !important;
-}
+
 .bp {
   background-color: #212121 !important;
 }
@@ -78,10 +85,7 @@
   color: #ebebeb;
   outline: none;
 }
-.empty {
-  margin: 10em auto;
-  font-size: 1.5em;
-}
+
 .divide {
   border-bottom: 1px solid #ebebeb;
   margin: 2rem 1rem;
@@ -89,12 +93,20 @@
 .item-price {
   margin-left: 1rem;
 }
+.item-img {
+  margin-left: 1rem;
+}
 .cart-quant {
   display: inline-block;
   width: 10px;
   cursor: pointer;
   margin-left: 2rem;
+  background: none;
+  border: none;
+  color: #ebebeb;
+  font-size: 1em;
+  outline: none;
 }
-.am {
-  margin: auto;
+.__debug-1.am.ap.bh.bi.bl.bo.bp.bq {
+  height: -webkit-fill-available;
 }

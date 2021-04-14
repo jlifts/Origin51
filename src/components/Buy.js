@@ -10,7 +10,8 @@ import VariantOptions from "./parts/VariantSelector";
 const Buy = ({ product }) => {
   const [quantity, setQuantity] = useState(1);
   const increment = async () => setQuantity(quantity + 1);
-  const decrement = async () => setQuantity(quantity - 1);
+  const decrement = async () =>
+    setQuantity(quantity > 1 ? quantity - 1 : quantity + 0);
   const handleChange = async (e) => {
     const { value } = e.target;
     setQuantity(parseInt(value, 0));

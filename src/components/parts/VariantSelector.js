@@ -11,7 +11,7 @@ const VariantOptions = ({
   const label = option.name;
 
   return (
-    <form hidden={hidden || false}>
+    <form className="variant-form" hidden={hidden || false}>
       <select
         className="variant"
         disabled={disabled || false}

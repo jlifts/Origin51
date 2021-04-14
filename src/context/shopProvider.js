@@ -113,8 +113,6 @@ class ShopProvider extends Component {
     );
     this.setState({ checkout: checkout });
     console.log(checkout);
-
-    this.closeCart();
   };
   //cart sidebar handler
   closeCart = () => {

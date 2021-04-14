@@ -2,16 +2,20 @@ import React, { useContext } from "react";
 import { ShopContext } from "../context/shopProvider";
 import { SideDrawer, Div, Anchor } from "atomize";
 import "../styles/Cart.scss";
+// import { useState } from "react";
 
 const Cart = () => {
-  const {
-    isCartOpen,
-    closeCart,
-    checkout,
-    increment,
-    decrement,
-    removeLineItems,
-  } = useContext(ShopContext);
+  const { isCartOpen, closeCart, checkout, removeLineItems } = useContext(
+    ShopContext
+  );
+  // const [quantity, setQuantity] = useState(1);
+  // const increment = async () => setQuantity(quantity + 1);
+  // const decrement = async () =>
+  //   setQuantity(quantity > 1 ? quantity - 1 : quantity + 0);
+  // const handleChange = async (e) => {
+  //   const { value } = e.target;
+  //   setQuantity(parseInt(value, 0));
+  // };
 
   if (checkout.lineItems) {
     return (
@@ -50,24 +54,19 @@ const Cart = () => {
                         bgPos="center center"
                         h="5rem"
                         w="4rem"
+                        marginLeft="2rem"
                       />
                     </div>
                     <div className="cart-wrap">
                       <p className="item">{item.title}</p>
                       <p className="item">Flavor: {item.variant.title}</p>
                       <p className="item quant">Quantity: {item.quantity}</p>
-                      <div
-                        onClick={() => increment(item.id, item.quantity)}
-                        className="cart-quant"
-                      >
+                      {/* <button onClick={increment} className="cart-quant">
                         +
-                      </div>
-                      <div
-                        onClick={() => decrement(item.id)}
-                        className="cart-quant"
-                      >
+                      </button>
+                      <button onClick={decrement} className="cart-quant">
                         -
-                      </div>
+                      </button> */}
                     </div>
                     <div className="item-price">
                       <p>${item.variant.price * item.quantity}</p>
@@ -77,15 +76,18 @@ const Cart = () => {
                 ))}
             </>
           )}
-          <div className="subtotal cartLabel">Subtotal</div>
-          <div className="subtotal">$ {checkout.subtotalPrice}</div>
-          <Anchor
-            href={checkout.webUrl}
-            target="_blank"
-            className="checkout-btn"
-          >
-            Checkout
-          </Anchor>
+          <div className="bottum">
+            <div className="subtotal cartLabel">Subtotal</div>
+            <div className="subtotal">$ {checkout.subtotalPrice}</div>
+            <a
+              href={checkout.webUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="checkout-btn"
+            >
+              Checkout
+            </a>
+          </div>
         </div>
       </SideDrawer>
     );

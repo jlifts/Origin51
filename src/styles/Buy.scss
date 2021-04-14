@@ -21,10 +21,10 @@ span {
 .__debug-3 {
   background: green !important;
   display: inline !important;
-  margin-left: 6em;
   margin-bottom: 7rem;
   border: 2px solid green !important;
   outline: none;
+  margin-top: 1em;
 
   &:hover {
     background: black !important;
@@ -32,7 +32,6 @@ span {
   }
   @media screen and (max-width: 1220px) {
     width: auto;
-    margin: 3rem !important;
     margin-left: 2rem !important;
     display: block;
   }
@@ -51,7 +50,6 @@ span {
 }
 .quantity-container {
   display: inline-block;
-  margin: 0em 2em;
 
   .quantity {
     margin: 0 1rem;
@@ -63,17 +61,8 @@ span {
     cursor: pointer;
   }
 
-  @media screen and (max-width: 1300px) {
-    margin-left: 2rem !important;
-  }
-
-  @media screen and (max-width: 1220px) {
-    margin-left: 8rem !important;
-    margin-right: 4rem !important;
-  }
-
   @media screen and (max-width: 450px) {
-    margin-left: 4rem !important;
+    margin: 1em 0em 0em -1em !important;
   }
 }
 .add {
