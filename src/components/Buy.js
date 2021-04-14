@@ -1,64 +1,40 @@
-import React, { useContext, useEffect } from "react";
+import React, { useState } from "react";
 import "../styles/Buy.scss";
-import { ShopContext } from "../context/shopProvider";
-import { Row, Button, Col } from "atomize";
-
-// import Variant from '../components/VariantSelector'
+import { Row, Col } from "atomize";
+import { useSelectedVariant } from "../config/hooks";
+import AddToCart from "./parts/AddToCartButton";
+import Quantity from "./parts/Quantity";
+import VariantOptions from "./parts/VariantSelector";
 
 //Smokable Id = 6551422795985
 //Vape Id = 6551423058129
-const Buy = () => {
-  const {
-    fetchProductWithId,
-    addItemToCheckout,
-    product,
-    products,
-    increment,
-    decrement,
-  } = useContext(ShopContext);
-  let id = 6551422795985;
-
-  useEffect(() => {
-    fetchProductWithId();
-    return () => {
-      console.log(id);
-    };
-  }, [fetchProductWithId, id]);
+const Buy = ({ product }) => {
+  const [quantity, setQuantity] = useState(1);
+  const { selectedVariant, handleOptionChange } = useSelectedVariant(product);
 
   if (!product) return <div>Loading</div>;
   return (
     <div className="add">
       <Row>
-        {products.map((product) => (
-          <Col key={product.id}>
-            <span className="price">${product.variants[0].price}</span>
-            {/* <Variant /> */}
-            <div className="quantity-container">
-              <button
-                className="increase quantity"
-                onClick={() => increment(product.variants[0].id, 1)}
-              >
-                +
-              </button>
-              <span className="quantity number" min="1">
-                {product.quantity}
-              </span>
-              <button
-                className="decrease quantity"
-                onClick={() => decrement(product.variants[0].id, -1)}
-              >
-                -
-              </button>
-            </div>
-            <Button
-              className="add-btn"
-              onClick={() => addItemToCheckout(product.variants[0].id, 1)}
-            >
-              {" "}
-              Add To Cart
-            </Button>
-          </Col>
-        ))}
+        <Col>
+          <span className="price">
+            ${selectedVariant?.price || product.variants[0].price}
+          </span>
+          <VariantOptions
+            product={product}
+            handleChange={handleOptionChange}
+            getOption={0}
+            hidden={product.variants.length < 2}
+          />
+          <div className="quantity-container">
+            <Quantity handleInput={setQuantity} defaultValue={quantity} />
+          </div>
+          <AddToCart
+            disabled={!selectedVariant && !selectedVariant?.availableToSell}
+            product={selectedVariant}
+            quantity={quantity}
+          />
+        </Col>
       </Row>
     </div>
   );

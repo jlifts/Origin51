@@ -1,43 +1,47 @@
-import React, { useContext, useEffect} from 'react'
-import '../styles/BuyL.scss'
-import { useParams } from 'react-router-dom'
-import { ShopContext } from '../context/shopProvider'
-import { Row, Button, Col} from 'atomize'
+import React, { useState } from "react";
+import "../styles/BuyL.scss";
+import { Row, Col } from "atomize";
+import { useSelectedVariant } from "../config/hooks";
+import AddToCart from "./parts/AddToCartButton";
+import Quantity from "./parts/Quantity";
+import VariantOptions from "./parts/VariantSelector";
+
+// import Variant from '../components/VariantSelector'
 
 //Smokable Id = 6551422795985
 //Vape Id = 6551423058129
-const Buy = () => {
+const Buy = ({ product }) => {
+  const [quantity, setQuantity] = useState(1);
+  const { selectedVariant, handleOptionChange } = useSelectedVariant(product);
 
-    let { id } = useParams()
+  if (!product) return <div>Loading</div>;
+  return (
+    <div className="addL">
+      <Row>
+        <Col>
+          <span className="price">${product.variants[1].price}</span>
+          <VariantOptions
+            product={product}
+            handleChange={handleOptionChange}
+            getOption={0}
+            hidden={product.variants.length < 2}
+          />
+          <div className="quantity-container">
+            <Quantity
+              label="Quantity"
+              handleInput={setQuantity}
+              defaultValue={quantity}
+            />
+          </div>
+          <AddToCart
+            disabled={!selectedVariant && !selectedVariant?.availableToSell}
+            product={selectedVariant}
+            quantity={quantity}
+          />
+        </Col>
+      </Row>
+    </div>
+  );
+};
 
-    const { fetchProductWithId, addItemToCheckout, product, products, increment, decrement } = useContext(ShopContext)
-
-    useEffect(() => {
-        fetchProductWithId(id)
-        return () => {
-
-        };
-    }, [ fetchProductWithId, id ])
-
-
-    if(!product) return <div>Loading</div>
-    return (
-        <div className='add'>
-            <Row>
-                {products.map(product => (
-                <Col key={product.id}>
-                    <span className='price'>${product.variants[0].price}</span>
-                    <div className='quantity-container'>
-                        <button className='increase quantity' onClick={() => increment(product.id)} >+</button>
-                        {/* <span className='quantity number'>{product.quantity}</span> */}
-                        <button className='decrease quantity' onClick={() => decrement(product.id)} >-</button>
-                    </div>
-                    <Button  className='add-btn' onClick={() => addItemToCheckout(product.variants[0].id, 1)}> Add To Cart</Button>
-                </Col>
-                ))}
-            </Row>
-        </div>
-    )
-}
-
-export default Buy
+export default Buy;

@@ -4,7 +4,7 @@ import { Switch, Route, Redirect, useLocation } from "react-router-dom";
 import ShopProvider from "./context/shopProvider";
 import { Client as Styletron } from "styletron-engine-atomic";
 import { Provider as StyletronProvider, DebugEngine } from "styletron-react";
-import Rescroll from "./context/Top";
+import Rescroll from "./functions/Top";
 import { AnimatePresence } from "framer-motion";
 
 //componenets

@@ -57,20 +57,20 @@ const Cart = () => {
                       <p className="item">Flavor: {item.variant.title}</p>
                       <p className="item quant">Quantity: {item.quantity}</p>
                       <div
-                        onClick={() => increment(item.quantity)}
+                        onClick={() => increment(item.id, item.quantity)}
                         className="cart-quant"
                       >
                         +
                       </div>
                       <div
-                        onClick={() => decrement(item.quantity)}
+                        onClick={() => decrement(item.id)}
                         className="cart-quant"
                       >
                         -
                       </div>
                     </div>
                     <div className="item-price">
-                      <p>${item.variant.price}</p>
+                      <p>${item.variant.price * item.quantity}</p>
                     </div>
                     <div className="divide"></div>
                   </div>

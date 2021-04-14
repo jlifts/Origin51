@@ -38,3 +38,19 @@ html {
     border-bottom: solid 2px greenyellow;
   }
 }
+.variant {
+  outline: none;
+  border: none;
+  color: #ebebeb;
+  background: none;
+  font-size: 1.25em;
+  margin: 0em auto;
+}
+form {
+  display: inline-block;
+  margin: 0em 4em;
+}
+input.quantity.number {
+  cursor: default;
+  width: 15px;
+}

@@ -1,12 +1,7 @@
 import React, { Component } from "react";
-import Client from "shopify-buy";
+import client from "../config/shopifyClient";
 
 const ShopContext = React.createContext();
-
-const client = Client.buildClient({
-  domain: "origin51.myshopify.com",
-  storefrontAccessToken: "864aa74c2de985c408f9fd7fbc24b56a",
-});
 
 class ShopProvider extends Component {
   state = {
@@ -26,6 +21,44 @@ class ShopProvider extends Component {
     }
   }
 
+  //data query
+  getVariants = (handle) => {
+    const qtyQuery = client.graphQLClient.query((root) => {
+      root.add(
+        "productByHandle",
+        { args: { handle: `${handle}` } },
+        (product) => {
+          product.add("title");
+          product.add("handle");
+          product.add("id");
+          product.addConnection(
+            "variants",
+            { args: { first: 99 } },
+            (variant) => {
+              variant.add("id");
+              variant.add("title");
+              variant.add("availableForSale");
+              variant.add("quantityAvailable");
+              variant.add("currentlyNotInStock");
+              variant.add("price");
+              variant.add("selectedOptions", (opts) => {
+                opts.add("name");
+                opts.add("value");
+              });
+            }
+          );
+        }
+      );
+    });
+
+    return client.graphQLClient
+      .send(qtyQuery)
+      .then((res) => {
+        return JSON.parse(JSON.stringify(res.model.productByHandle));
+      })
+      .catch(() => null);
+  };
+
   createCheckout = async () => {
     const checkout = await client.checkout.create();
     localStorage.setItem("checkout", checkout.id);
@@ -41,6 +74,19 @@ class ShopProvider extends Component {
       .catch((err) => console.log(err));
   };
 
+  fetchAllProducts = async () => {
+    const products = await client.product.fetchAll();
+    this.setState({ products: products });
+  };
+
+  fetchProductWithId = async (id) => {
+    const product = await client.product.fetch(id);
+    this.setState({ product: product });
+    console.log(JSON.stringify(product));
+
+    return product;
+  };
+  //add to checkout
   addItemToCheckout = async (variantId, quantity) => {
     const lineItemsToAdd = [
       {
@@ -57,19 +103,6 @@ class ShopProvider extends Component {
 
     this.openCart();
   };
-
-  fetchAllProducts = async () => {
-    const products = await client.product.fetchAll();
-    this.setState({ products: products });
-  };
-
-  fetchProductWithId = async (id) => {
-    const product = await client.product.fetch(id);
-    this.setState({ product: product });
-    console.log(JSON.stringify(product));
-
-    return product;
-  };
   //remove line item
   removeLineItems = async (variantId) => {
     const lineItemsToRemove = [variantId];
@@ -82,13 +115,16 @@ class ShopProvider extends Component {
 
     this.closeCart();
   };
-
+  //cart sidebar handler
   closeCart = () => {
     this.setState({ isCartOpen: false });
   };
   openCart = () => {
     this.setState({ isCartOpen: true });
   };
+  //variants
+  getSelectedVariant = async (product, options) =>
+    await client.product.helpers.variantForOptions(product, options);
 
   // working on
   increment = async (id, quantity) => {
@@ -108,12 +144,6 @@ class ShopProvider extends Component {
     );
     this.setState({ checkout: checkout });
   };
-
-  Variants;
-  changeVariant = async (variantId) => {
-    const options = this.variant.options;
-    this.variantOptions(variantId, options);
-  };
   //work end
 
   render() {
@@ -129,7 +159,8 @@ class ShopProvider extends Component {
           increment: this.increment,
           decrement: this.decrement,
           removeLineItems: this.removeLineItems,
-          changeVariant: this.changeVariant,
+          getVariants: this.getVariants,
+          getSelectedVariant: this.getSelectedVariant,
         }}
       >
         {this.props.children}
