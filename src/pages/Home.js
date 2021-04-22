@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { ShopContext } from "../context/shopProvider";
 import Hero from "../components/Hero";
+import Nav from "../components/Nav";
 import Section from "../components/Section";
 import SectionR from "../components/SectionR";
 import Photo1 from "../Images/Origin51_OutofthisWorld.svg";
@@ -25,6 +26,7 @@ const Home = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
+      <Nav />
       <Hero />
       <motion.div initial={{}} animate={{}}>
         <Section

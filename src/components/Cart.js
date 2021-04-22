@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { ShopContext } from "../context/shopProvider";
-import { SideDrawer, Div, Anchor } from "atomize";
+import { SideDrawer, Div } from "atomize";
 import "../styles/Cart.scss";
 // import { useState } from "react";
 

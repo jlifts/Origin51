@@ -50,6 +50,19 @@ footer {
   color: #ebebeb;
   margin-left: 4rem;
   margin-right: 3rem;
+  font-size: 12px;
+
+  span {
+    font-size: 12px;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  p {
+    letter-spacing: 1px;
+    cursor: default !important;
+    max-width: 350px;
+  }
 
   @media screen and (max-width: 1220px) {
     width: auto;

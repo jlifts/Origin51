@@ -21,7 +21,7 @@ span {
 .__debug-3 {
   background: green !important;
   display: inline !important;
-  margin-bottom: 7rem;
+  // margin-bottom: 7rem;
   border: 2px solid green !important;
   outline: none;
   margin-top: 1em;
@@ -66,7 +66,8 @@ span {
   }
 }
 .add {
-  margin-bottom: 10em;
+  // margin-bottom: 10em;
+
   @media screen and (max-width: 1300px) {
     margin: 0 !important;
     display: block;

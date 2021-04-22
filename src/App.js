@@ -8,7 +8,7 @@ import Rescroll from "./functions/Top";
 import { AnimatePresence } from "framer-motion";
 
 //componenets
-import Nav from "./components/Nav";
+// import Nav from "./components/Nav";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
 import Cart from "./components/Cart";
@@ -27,7 +27,7 @@ function App() {
     <section className="App">
       <ShopProvider>
         <StyletronProvider value={engine} debug={debug} debugAfterHydration>
-          <Nav />
+          {/* <Nav /> */}
           <Cart />
           {/* <ProgressBar scroll={this.state.scrollPosition + "%"} />
           <div id="scrollPath"></div> */}

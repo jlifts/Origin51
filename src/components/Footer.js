@@ -121,15 +121,14 @@ class Footer extends Component {
         <div className="legal">
           <h3>Legal</h3>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et
-            egestas dui. Suspendisse potenti. Interdum et malesuada fames ac
-            ante ipsum primis in faucibus. Pellentesque pellentesque volutpat
-            ante, consectetur semper enim blandit tristique. In dictum feugiat
-            ante, quis ultricies elit lacinia lobortis. Phasellus nec finibus
-            dui. Donec iaculis condimentum metus, eget vulputate tellus faucibus
-            nec. Etiam gravida condimentum libero, in suscipit dui pretium id.
-            Suspendisse dictum erat a laoreet pharetra. Sed non aliquam nibh, eu
-            feugiat nisl.
+            <span>UNDERAGE SALE PROHIBITED</span>
+            <span>SMOKING IS HAZARDOUS TO YOUR HEALTH</span>
+            This statement has not been evaluated by the Food and Drug
+            Administration. This product is not intended to diagnose, treat,
+            cure or prevent any disease. CONSULT YOUR DOCTOR BEFORE USING THIS
+            PRODUCT. KEEP OUT OF THE REACH OF CHILDREN. DO NOT USE IF PREGNANT,
+            LACTATION, OR SUFFERING FROM MEDICAL CONDITIONS, OR TAKING
+            MEDICATIONS.
           </p>
         </div>
       </footer>
