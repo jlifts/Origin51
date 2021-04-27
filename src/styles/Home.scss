@@ -17,3 +17,45 @@
     height: auto;
   }
 }
+.entry {
+  height: fit-content;
+  width: 100%;
+  z-index: 80;
+  background-color: black;
+
+  .age.container {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    height: 70%;
+    margin-top: 2em;
+
+    h3 {
+      color: #ebebeb;
+      margin-top: 1.5em;
+      padding: 1em;
+    }
+    .button.container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .age.button {
+        padding: 0.75em 1.25em;
+        font-size: 1em;
+        background-color: #14ff00;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        color: black;
+
+        &:hover {
+          background-color: #ebebeb;
+          transition: 0.4s ease;
+        }
+      }
+    }
+  }
+}

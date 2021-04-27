@@ -17,16 +17,16 @@ const Nav = () => {
     <>
       <nav className="nav">
         <div className="nav-container buy">
-          <Link to="/" onClick={toggleTop} className="nav-name">
+          <Link to="/home" onClick={toggleTop} className="nav-name">
             Origin 51
           </Link>
-          <Link to="/" onClick={toggleTop} className="nav-logo">
+          <Link to="/home" onClick={toggleTop} className="nav-logo">
             <img src={Lo} alt=" " />
           </Link>
           <ul className="nav-menu">
             <li className="nav-item">
               <NavLink
-                to="/"
+                to="/home"
                 exact
                 activeClassName="underline"
                 className="nav-link"

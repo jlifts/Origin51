@@ -10,6 +10,7 @@ import { AnimatePresence } from "framer-motion";
 //componenets
 // import Nav from "./components/Nav";
 import Home from "./pages/Home";
+import AgeRestriction from "./pages/RestrictionPage";
 import Products from "./pages/Products";
 import Cart from "./components/Cart";
 // import ProgressBar from "./components/ProgressBar";
@@ -34,7 +35,8 @@ function App() {
           <Rescroll />
           <AnimatePresence exitBeforeEnter>
             <Switch location={location} key={location.key}>
-              <Route path="/" exact component={Home} />
+              <Route path="/" exact component={AgeRestriction} />
+              <Route path="/home" exact component={Home} />
               <Route path="/products" exact component={Products} />
               <Route path="*" component={PageNotFound} />
               <Redirect to="/404" />

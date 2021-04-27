@@ -6,7 +6,7 @@
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-T49M4X3');</script>
+    })(window,document,'script','dataLayer',process.env.REACT_APP_GA_TAG);</script>
   <!-- End Google Tag Manager -->
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
@@ -16,6 +16,7 @@
       name="Origin 51"
       content="This is where you can get out-of-this-world smokable hemp!"
     />
+    <!----------By Josh Burgess-->
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/favicon.ico" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -35,7 +36,7 @@
   </head>
   <body>
   <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T49M4X3"
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=process.env.REACT_APP_GA_TAG"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
     <noscript>You need to enable JavaScript to run this app.</noscript>

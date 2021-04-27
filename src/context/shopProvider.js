@@ -125,6 +125,16 @@ class ShopProvider extends Component {
   getSelectedVariant = async (product, options) =>
     await client.product.helpers.variantForOptions(product, options);
 
+  //Discount Code
+  discount = async (discountCode) => {
+    const discountToAdd = [discountCode];
+    const checkout = await client.checkout.addDiscount(
+      this.state.checkout.id,
+      discountToAdd
+    );
+    this.setState({ checkout: checkout });
+  };
+  //State Handler
   render() {
     return (
       <ShopContext.Provider
@@ -138,6 +148,7 @@ class ShopProvider extends Component {
           removeLineItems: this.removeLineItems,
           getVariants: this.getVariants,
           getSelectedVariant: this.getSelectedVariant,
+          discount: this.discount,
         }}
       >
         {this.props.children}
