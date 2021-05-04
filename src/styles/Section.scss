@@ -1,6 +1,7 @@
 .contents {
   display: flex;
   width: fit-content;
+  flex-direction: column;
 }
 .nav-container.buy {
   position: fixed !important;
@@ -32,6 +33,9 @@
     margin: auto;
     display: block;
   }
+}
+.divScroll {
+  margin-bottom: 5em;
 }
 .photo {
   width: 28rem;

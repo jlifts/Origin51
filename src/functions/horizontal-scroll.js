@@ -55,7 +55,7 @@ export default ({ children }) => {
 
   useEffect(() => {
     handleDynamicHeight(objectRef, setDynamicHeight);
-    window.addEventListener("resize", resizeHandler);
+    window.addEventListener("resize", resizeHandler, { passive: true });
     applyScrollListener(containerRef, setTranslateX);
   }, []);
 
