@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/Origin51/static/css/main.94e3ffcc.chunk.css",
-    "main.js": "/Origin51/static/js/main.4ce41242.chunk.js",
-    "main.js.map": "/Origin51/static/js/main.4ce41242.chunk.js.map",
-    "runtime-main.js": "/Origin51/static/js/runtime-main.785cf990.js",
-    "runtime-main.js.map": "/Origin51/static/js/runtime-main.785cf990.js.map",
-    "static/js/2.d341cc34.chunk.js": "/Origin51/static/js/2.d341cc34.chunk.js",
-    "static/js/2.d341cc34.chunk.js.map": "/Origin51/static/js/2.d341cc34.chunk.js.map",
-    "static/js/3.46945187.chunk.js": "/Origin51/static/js/3.46945187.chunk.js",
-    "static/js/3.46945187.chunk.js.map": "/Origin51/static/js/3.46945187.chunk.js.map",
-    "index.html": "/Origin51/index.html",
-    "static/css/main.94e3ffcc.chunk.css.map": "/Origin51/static/css/main.94e3ffcc.chunk.css.map",
-    "static/js/2.d341cc34.chunk.js.LICENSE.txt": "/Origin51/static/js/2.d341cc34.chunk.js.LICENSE.txt",
-    "static/media/Origin51_OutofthisWorld.9be5e687.svg": "/Origin51/static/media/Origin51_OutofthisWorld.9be5e687.svg",
-    "static/media/Origin51_alt-logo.b76ba844.svg": "/Origin51/static/media/Origin51_alt-logo.b76ba844.svg",
-    "static/media/Origin51_alt-logotype.1b95fa46.svg": "/Origin51/static/media/Origin51_alt-logotype.1b95fa46.svg",
-    "static/media/Origin51_logo_alien.e89f60e2.svg": "/Origin51/static/media/Origin51_logo_alien.e89f60e2.svg",
-    "static/media/Hero.scss": "/Origin51/static/media/space.aaa0f0fd.jpeg"
+    "main.css": "/home/static/css/main.c8cd125f.chunk.css",
+    "main.js": "/home/static/js/main.4ce41242.chunk.js",
+    "main.js.map": "/home/static/js/main.4ce41242.chunk.js.map",
+    "runtime-main.js": "/home/static/js/runtime-main.48e9fc70.js",
+    "runtime-main.js.map": "/home/static/js/runtime-main.48e9fc70.js.map",
+    "static/js/2.d341cc34.chunk.js": "/home/static/js/2.d341cc34.chunk.js",
+    "static/js/2.d341cc34.chunk.js.map": "/home/static/js/2.d341cc34.chunk.js.map",
+    "static/js/3.46945187.chunk.js": "/home/static/js/3.46945187.chunk.js",
+    "static/js/3.46945187.chunk.js.map": "/home/static/js/3.46945187.chunk.js.map",
+    "index.html": "/home/index.html",
+    "static/css/main.c8cd125f.chunk.css.map": "/home/static/css/main.c8cd125f.chunk.css.map",
+    "static/js/2.d341cc34.chunk.js.LICENSE.txt": "/home/static/js/2.d341cc34.chunk.js.LICENSE.txt",
+    "static/media/Origin51_OutofthisWorld.9be5e687.svg": "/home/static/media/Origin51_OutofthisWorld.9be5e687.svg",
+    "static/media/Origin51_alt-logo.b76ba844.svg": "/home/static/media/Origin51_alt-logo.b76ba844.svg",
+    "static/media/Origin51_alt-logotype.1b95fa46.svg": "/home/static/media/Origin51_alt-logotype.1b95fa46.svg",
+    "static/media/Origin51_logo_alien.e89f60e2.svg": "/home/static/media/Origin51_logo_alien.e89f60e2.svg",
+    "static/media/Hero.scss": "/home/static/media/space.aaa0f0fd.jpeg"
   },
   "entrypoints": [
-    "static/js/runtime-main.785cf990.js",
+    "static/js/runtime-main.48e9fc70.js",
     "static/js/2.d341cc34.chunk.js",
-    "static/css/main.94e3ffcc.chunk.css",
+    "static/css/main.c8cd125f.chunk.css",
     "static/js/main.4ce41242.chunk.js"
   ]
 }
