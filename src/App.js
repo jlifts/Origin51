@@ -35,7 +35,7 @@ function App() {
           <Rescroll />
           <AnimatePresence exitBeforeEnter>
             <Switch location={location} key={location.key}>
-              <Route path='/' exact component={AgeRestriction} />
+              <Route path='/Origin51' exact component={AgeRestriction} />
               <Route path='/home' exact component={Home} />
               <Route path='/products' exact component={Products} />
               {/* <Route path="*" component={PageNotFound} />
