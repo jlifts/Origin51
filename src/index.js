@@ -1,14 +1,15 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter as Router } from "react-router-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import { HashRouter as Router } from 'react-router-dom';
+//Changed to HashRouter for gh-pages
 
 ReactDOM.render(
   <Router>
     <App />
   </Router>,
-  document.getElementById("root")
+  document.getElementById('root')
 );
 
 reportWebVitals();
