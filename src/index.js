@@ -6,7 +6,7 @@ import { HashRouter as Router } from 'react-router-dom';
 //Changed to HashRouter for gh-pages
 
 ReactDOM.render(
-  <Router>
+  <Router basename='/Origin51'>
     <App />
   </Router>,
   document.getElementById('root')
