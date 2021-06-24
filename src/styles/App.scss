@@ -18,6 +18,13 @@
 .App {
   overflow-x: clip;
 }
+.add {
+  display: flex;
+}
+.ap {
+  display: unset !important;
+  margin: 0 1em !important;
+}
 html {
   background: black;
 }
