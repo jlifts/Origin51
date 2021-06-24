@@ -4,15 +4,15 @@
   flex-direction: column;
 }
 .nav-container.buy {
-  position: fixed !important;
+  // position: fixed !important;
   width: 100vw;
 }
 .container {
   margin: 0rem 9rem;
   display: grid;
   grid-template-areas:
-    "col1 col1 col1 col2 col2 col2"
-    "col1 col1 col1 col3 col3 col3";
+    'col1 col1 col1 col2 col2 col2'
+    'col1 col1 col1 col3 col3 col3';
   grid-gap: 1rem;
   width: 80vw;
 
@@ -24,7 +24,7 @@
 
   @media screen and (max-width: 850px) {
     width: auto;
-    margin: 3rem;
+    margin: 0 1em;
     display: block;
   }
 
@@ -160,8 +160,8 @@
   margin: 0rem 9rem;
   display: grid;
   grid-template-areas:
-    "col1 col1 col1 col2 col2 col2"
-    "col1 col1 col1 col3 col3 col3";
+    'col1 col1 col1 col2 col2 col2'
+    'col1 col1 col1 col3 col3 col3';
   grid-gap: 1rem;
   width: 80vw;
 

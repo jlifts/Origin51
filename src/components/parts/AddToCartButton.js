@@ -1,6 +1,6 @@
-import { useContext, useState } from "react";
-import { ShopContext } from "../../context/shopProvider";
-import { Button } from "atomize";
+import { useContext, useState } from 'react';
+import { ShopContext } from '../../context/shopProvider';
+import { Button } from 'atomize';
 
 const AddToCartButton = ({ disabled = false, product, quantity = 1 }) => {
   const { addItemToCheckout } = useContext(ShopContext);
@@ -17,7 +17,8 @@ const AddToCartButton = ({ disabled = false, product, quantity = 1 }) => {
       onClick={handleOnClick}
       disabled={disabled}
       isLoading={isLoading}
-      loadingText="Adding to Cart"
+      loadingText='Adding to Cart'
+      className='toCart'
     >
       Add To Cart
     </Button>

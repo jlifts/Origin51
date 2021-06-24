@@ -76,7 +76,6 @@
 }
 .remove {
   cursor: pointer;
-  width: 1rem;
   margin-left: 1rem;
   margin-bottom: 1.5rem;
   font-size: 0.7em;
@@ -109,4 +108,7 @@
 }
 .__debug-1.am.ap.bh.bi.bl.bo.bp.bq {
   height: -webkit-fill-available;
+}
+.toCart {
+  background: green !important;
 }

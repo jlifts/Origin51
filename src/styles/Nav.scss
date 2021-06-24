@@ -15,8 +15,9 @@
 }
 .nav-container {
   max-width: 100%;
+  width: 100vw;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   height: 70px;
   display: flex;
 }
@@ -47,7 +48,6 @@
   grid-gap: 15px;
   list-style: none;
   text-align: center;
-  width: 80vw;
   justify-content: end;
   margin-right: 2rem;
 
@@ -96,6 +96,6 @@
 .af {
   padding: 0 1rem !important;
 }
-.ax {
-  background: #212121 !important;
-}
+// .ax {
+//   background: #212121 !important;
+// }
